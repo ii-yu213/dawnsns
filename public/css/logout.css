@@ -1,0 +1,65 @@
+@chasert "utf-8";
+
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: #3C4767;
+
+}
+
+.sns {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+
+}
+
+#container {
+
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#container form {
+    padding: 10px;
+    width: 30%;
+    background-color: aliceblue;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#container h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#container p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input {
+    margin: 0 auto;
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+.main {
+    margin-bottom: 32px;
+    text-align: center;
+}
