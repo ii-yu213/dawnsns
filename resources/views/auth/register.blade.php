@@ -1,27 +1,27 @@
 @extends('layouts.logout')
 <div class="main">
-@section('content')
+  @section('content')
 
-{!! Form::open() !!}
+  {!! Form::open() !!}
 
 
-<h2>新規ユーザー登録</h2>
+  <h2>新規ユーザー登録</h2>
 
-{{ Form::label('UserName') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+  {{ Form::label('UserName') }}
+  {{ Form::text('username',null,['class' => 'input']) }}
 
-{{ Form::label('MailAdress') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
+  {{ Form::label('MailAdress') }}
+  {{ Form::text('mail',null,['class' => 'input']) }}
 
-{{ Form::label('Password') }}
-{{ Form::text('password',null,['class' => 'input']) }}
+  {{ Form::label('Password') }}
+  {{ Form::text('password',null,['class' => 'input']) }}
 
-{{ Form::label('Password confirm') }}
-{{ Form::text('password-confirm',null,['class' => 'input']) }}
+  {{ Form::label('Password confirm') }}
+  {{ Form::text('password_confirmation',null,['class' => 'input']) }}
 
-{{ Form::submit('REGSTER') }}
+  {{ Form::submit('REGSTER') }}
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+  <p><a href="/login">ログイン画面へ戻る</a></p>
 </div>
 
 {!! Form::close() !!}
