@@ -13,13 +13,141 @@ header {
 #row {
     display: flex;
     flex-flow: row wrap;
+
 }
 
 #container {
     flex: 0 0 80%;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+
 }
 
 #side-bar {
     flex: 0 0 19%;
-    border-left: 1px solid #6C6C6C;
+    width: 100px;
+    height: 300px;
+}
+
+#head {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+.tweet {
+    margin: 1rem;
+    padding: 0 1rem;
+    width: 70%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    height: 2.3rem;
+}
+
+
+#account p {
+    color: white;
+}
+
+#confirm p {
+    color: black;
+}
+
+#acdn {
+    background: #A9A9A9;
+    padding: 10px;
+}
+
+ul {
+    position: absolute;
+    display: none;
+    margin: 0;
+    padding: 0;
+    background: #A9A9A9;
+    list-style: none;
+}
+
+
+.p {
+    display: inline-block;
+}
+
+.arrow-bottom {
+    transform: rotate(90deg);
+    display: inline-block;
+
+}
+
+.btn {
+    color: #00008B;
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.sub-btn {
+    float: right !important;
+    border: none;
+}
+
+.dele-btn {
+    float: right !important;
+    border: none;
+}
+
+.edit-btn {
+    float: right !important;
+    border: none;
+}
+
+.btn {
+    background: #3C4767;
+}
+
+.search {
+    margin: 10px;
+    margin-left: 0;
+    padding: 1px;
+}
+
+.input {
+    margin: 0 auto;
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.icon {
+    border: none;
+}
+
+.edit-modal {
+    display: none;
+}
+
+
+.name {
+    display: inline-block;
+}
+
+.bio {
+    display: inline-block;
+}
+
+
+.icon {
+    display: inline-block;
+}
+
+.follow-btn {
+    display: inline-block;
+}
+
+
+p {
+    justify-content: space-around;
 }

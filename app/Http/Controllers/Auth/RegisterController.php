@@ -48,11 +48,33 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'username' => 'required|string|max:255',
+        return Validator::make(
+            $data,
+            [
+            'username' => 'required|string|between:4,12',
             'mail' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:4|confirmed',
-        ]);
+            'password' => 'required|string|between:4,8|alpha_num|unique:users',
+            'password-confirm' => 'required|string|same:password|between:4,8|alpha_num',
+            ],
+            [
+                'username.required' => '必須項目です',
+                'username.between' => '4～12文字で入力してください',
+                'mail.required' => '必須項目です',
+                'mail.email' => '形式が違います',
+                'mail.unique' => 'このメールアドレスは登録済みです',
+
+                'password.required' => '必須項目です',
+                'password.between' => '4～8文字で入力してください',
+                'password.unique' => 'このメールアドレスは登録済みです',
+                'password.alpha_num' => 'このパスワードは登録済みです',
+
+                'password-confirm.required' => '必須項目です',
+                'password-confirm.between' => '4～8文字で入力してください',
+                'password-confirm.unique' => 'このメールアドレスは登録済みです',
+                'password-confirm.same' => 'パスワードと一致しません',
+                'password-confirm.alpha_num' => 'このパスワードは登録済みです',
+            ]
+    )->validate();
     }
 
     /**
@@ -68,6 +90,7 @@ class RegisterController extends Controller
             'mail' => $data['mail'],
             'password' => bcrypt($data['password']),
         ]);
+
     }
 
 
@@ -78,8 +101,9 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
-
+            $this->validator($data);
             $this->create($data);
+            session()->put('name', $data['username']);
             return redirect('added');
         }
         return view('auth.register');

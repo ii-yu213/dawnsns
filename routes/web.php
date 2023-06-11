@@ -34,10 +34,25 @@ Route::get('/added', 'Auth\RegisterController@added');
 Route::get('/top','PostsController@index');
 
 Route::get('/profile','UsersController@profile');
+Route::post('/profile','UsersController@update');
 
 Route::get('/search','UsersController@index');
+Route::post('/search','UsersController@search');
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+Route::get('/followList','FollowsController@followList');
+Route::get('/followerList','FollowsController@followerList');
 
 Route::get('/logout', 'PostsController@logout');
+
+Route::post('/post/create','PostsController@create');
+
+
+
+Route::get('/{user_id}/otherUser','UsersController@other');
+
+Route::put('/{id}/update-form','PostsController@update');
+
+Route::get('post/{id}/delete','PostsController@delete');
+
+Route::get('/{id}/follow','FollowsController@follow');
+Route::get('/{id}/unfollow','FollowsController@delete');
