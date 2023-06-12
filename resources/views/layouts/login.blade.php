@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <!--IEブラウザ対策-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
@@ -20,15 +21,16 @@
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
 </head>
+
 <body>
     <header>
-        <div id = "head">
-        <h1><a href="/top"><img src="{{ asset('/images/main_logo.png') }}"></a></h1>
+        <div id="head">
+            <h1><a href="/top"><img src="{{ asset('/images/main_logo.png') }}"></a></h1>
             <div id="acdn">
                 <div id="account">
                     <p><?php $user = Auth::user(); ?>{{ $user->username }}さん<img src="{{ asset('/storage/images/' . Auth::user()->images) }}"></p>
                 </div>
-                <ul>
+                <ul class="menu">
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
@@ -39,18 +41,18 @@
     <div id="row">
         <div id="container">
             @yield('content')
-        </div >
+        </div>
         <div id="side-bar">
             <div id="confirm">
                 <p><?php $user = Auth::user(); ?>{{ $user->username }}さんの</p>
                 <div>
-                <p>フォロー数</p>
-                <p><?php $follow = DB::table('follows')->where('follower',Auth::user()->id)->count(); ?>{{$follow}}名</p>
+                    <p>フォロー数</p>
+                    <p><?php $follow = DB::table('follows')->where('follower', Auth::user()->id)->count(); ?>{{$follow}}名</p>
                 </div>
                 <p class="btn"><a href="/followList">フォローリスト</a></p>
                 <div>
-                <p>フォロワー数</p>
-                <p><?php $follower = DB::table('follows')->where('follow',Auth::user()->id)->count(); ?>{{$follower}}名</p>
+                    <p>フォロワー数</p>
+                    <p><?php $follower = DB::table('follows')->where('follow', Auth::user()->id)->count(); ?>{{$follower}}名</p>
                 </div>
                 <p class="btn"><a href="/followerList">フォロワーリスト</a></p>
             </div>
@@ -62,4 +64,5 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

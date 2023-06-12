@@ -1,19 +1,21 @@
 @charset "utf-8";
-
 html {}
 
 body {}
 
+
 /* header */
+
 header {
     background: #3C4767;
 }
 
+
 /* main content */
+
 #row {
     display: flex;
     flex-flow: row wrap;
-
 }
 
 #container {
@@ -21,7 +23,6 @@ header {
     width: 250px;
     height: 300px;
     text-align: center;
-
 }
 
 #side-bar {
@@ -34,9 +35,7 @@ header {
     position: relative;
     display: flex;
     justify-content: space-between;
-
 }
-
 
 .tweet {
     margin: 1rem;
@@ -46,7 +45,6 @@ header {
     border: 1px solid #ccc;
     height: 2.3rem;
 }
-
 
 #account p {
     color: white;
@@ -61,7 +59,7 @@ header {
     padding: 10px;
 }
 
-ul {
+.menu {
     position: absolute;
     display: none;
     margin: 0;
@@ -70,7 +68,6 @@ ul {
     list-style: none;
 }
 
-
 .p {
     display: inline-block;
 }
@@ -78,7 +75,6 @@ ul {
 .arrow-bottom {
     transform: rotate(90deg);
     display: inline-block;
-
 }
 
 .btn {
@@ -129,7 +125,6 @@ ul {
     display: none;
 }
 
-
 .name {
     display: inline-block;
 }
@@ -138,7 +133,6 @@ ul {
     display: inline-block;
 }
 
-
 .icon {
     display: inline-block;
 }
@@ -146,7 +140,6 @@ ul {
 .follow-btn {
     display: inline-block;
 }
-
 
 p {
     justify-content: space-around;
