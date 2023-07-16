@@ -4,14 +4,18 @@
 <div class ="followlist">
   <h1>Follow list</h1>
   @foreach ($follows as $follow)
+
+  <!-- 画像の変更 -->
   <span><a href="/{{ $follow->follow }}/otherUser"><img src="images/dawn.png"></a></span>
   @endforeach
 </div>
 
 <div class="follows_posts">
 <table>
-<!-- フォローしている人の情報に変更 -->
-<!-- post、followテーブルの連携 -->
+
+
+<!-- フォローしている人の投稿 -->
+
 @foreach ($posts as $post)
   <tr>
       <td><a href="/{{ $post->user_id }}/otherUser"><img src="images/dawn.png"></a></td>

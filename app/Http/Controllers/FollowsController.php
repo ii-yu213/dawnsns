@@ -41,6 +41,8 @@ class FollowsController extends Controller
     public function followList(){
         $posts = DB::table('posts')->get();
         $follows = DB::table('follows')->where('follower',Auth::user()->id)->get();
+        $post = $this->followPosts();
+        $user = $this->followUsers();
         return view('follows.followList',['posts'=>$posts,'follows'=>$follows]);
     }
 
