@@ -26,7 +26,7 @@ class Follow extends Model
     public function join()
     {
         return DB::table('follows')
-        ->select('follows.follower','follows.follow','posts.id','posts.user_id','posts.posts','posts.created_at','users.id','users.username',)
+        ->select('follows.*','posts.*','users.*',)
         ->join('users','follows.follower','=','users.id')
         ->join('posts','follows.follower','=','post.user_id')
         ->get();

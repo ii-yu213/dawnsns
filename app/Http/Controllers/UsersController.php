@@ -67,16 +67,14 @@ class UsersController extends Controller
           $user = DB::table('users')->get();
         return Validator::make($rules,
             [
-            'username' => 'required|string|between:4,12',
-             'mail' => ['required','string','email','max:255',Rule::unique('users')->ignore(Auth::id())],
-             'password' => ['required','string','between:4,8','alpha_num',Rule::unique('users')->ignore(Auth::id())],
-             'bio' => 'string|max:200',
+            'name' => 'required|string|between:4,12',
+             'mail' => ['string','email','max:255',Rule::unique('users')->ignore(Auth::id())],
+             'password' => ['nullabel','string','between:4,8','alpha_num',Rule::unique('users')->ignore(Auth::id())],
+             'bio' => 'nullable|string|max:200',
             ],[
-             'username.required' => '必須項目です',
-            'username.between' => '4～12文字で入力してください',
-            'mail.required' => '必須項目です',
+             'user.required' => '必須項目です。',
+            'user.between' => '4～12文字で入力してください',
             'mail.email' => '形式が違います',
-            'password.required' => '必須項目です',
             'password.between' => '4～8文字で入力してください',
         ]
            )->validate();

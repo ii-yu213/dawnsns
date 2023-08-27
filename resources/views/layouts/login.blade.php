@@ -28,7 +28,7 @@
                 <div id="account">
                     <p><?php $user = Auth::user(); ?>{{ $user->username }}さん<img src="{{ asset('/storage/images/' . Auth::user()->images) }}"></p>
                 </div>
-                <ul>
+                <ul class="pull">
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
